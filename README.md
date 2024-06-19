@@ -1,16 +1,83 @@
-# firecasting
-This is our workflow for wildfire emission forecasting.
+# Wildfire Emission Forecasting
 
-# Usage
+This project aims to use advanced machine learning techniques to predict and analyze wildfire emissions using historical data. Whether you're a researcher, a policymaker, or simply curious about how technology can help us understand and manage wildfires, this project provides a fascinating insight into wildfire emission forecasting.
 
-This is directly exported from Geweaver instance running in GMU hopper. You can better view them by downloading the latest Released zip file in the Release page. 
+## Project Overview
 
-Install and open Geoweaver in your web browser.
+### What is Wildfire Emission Forecasting?
 
-Go to the Weaver tab and click `upload` button in the toolbar.
+Wildfire emission forecasting involves predicting the release of pollutants and other emissions from wildfires. This information is crucial for understanding the environmental impact of wildfires, managing air quality, and planning emergency responses. Historical data and machine learning models provide powerful tools for forecasting wildfire emissions accurately.
 
-Selected the download firecasting zip file and open.
+### Project Goals
 
-You will see a workflow showing up in the Weaver workspace in Geoweaver. All the source code and history runs we have done in Hopper are all there. 
+1. **Predict Wildfire Emissions**: Use historical data to predict emissions from wildfires.
+2. **Evaluate Model Performance**: Assess the accuracy and reliability of the predictions.
+3. **Visualize Emissions**: Create visual representations of wildfire emissions for easy understanding and analysis.
 
-If you want to replicate/reproduce the workflow, please find a Linux-like environment with the dataset ready. For questions regarding execution environment and datsets, please post on the Issues or directly contact us. :) 
+## How It Works
+
+### Step 1: Data Preparation
+
+We start by gathering and preparing the necessary data. This involves:
+
+- **Collecting Historical Data**: High-resolution historical data on wildfires and related factors.
+- **Preprocessing**: Cleaning and formatting the data for analysis.
+
+### Step 2: Model Training
+
+Using advanced machine learning techniques, we train a model to predict wildfire emissions. The model learns to recognize patterns in the historical data that indicate the presence and intensity of wildfires.
+
+### Step 3: Wildfire Emission Prediction
+
+Once the model is trained, it can predict emissions on new data. This helps in real-time monitoring and forecasting of wildfire emissions.
+
+### Step 4: Model Evaluation
+
+To ensure our predictions are accurate, we evaluate the model using various metrics. This step is crucial for understanding the reliability of our predictions and making necessary improvements.
+
+### Step 5: Visualization
+
+Finally, we create visual representations of the wildfire emission predictions. These visuals make it easy to see the distribution and intensity of wildfire emissions.
+
+## Key Features
+
+- **Automated Wildfire Emission Prediction**: Efficient and accurate prediction of wildfire emissions using machine learning.
+- **High-Resolution Historical Data**: Utilizes detailed historical data for precise analysis.
+- **Model Evaluation**: Comprehensive evaluation to ensure high accuracy.
+- **Visualization Tools**: Easy-to-understand visuals for quick insights.
+
+## How You Can Benefit
+
+- **Researchers**: Gain insights into wildfire emission patterns and their environmental impacts.
+- **Policy Makers**: Make informed decisions about air quality management and emergency response planning.
+- **Nature Enthusiasts**: Understand and visualize the impact of wildfires in various regions.
+
+## Getting Started: Using the Workflow
+
+### Step-by-Step Instructions
+
+1. **Download the Source Code**
+
+   - Visit the release page of the `wildfire_emission_forecasting` repository.
+   - Select the latest release available and download the corresponding zip file of the source code.
+
+2. **Import the Workflow into Your Environment**
+
+   - Open your workflow management tool.
+   - Click on "Import" and choose the downloaded zip file. Upload the file to create a new workflow named `wildfire_emission_forecasting`.
+
+3. **Execute the Workflow**
+
+   - Click on the execute icon to start the workflow execution process.
+   - Select the host and environment, then click "Execute" to initiate the workflow.
+   - Enter the required password when prompted and confirm to start executing the workflow.
+
+4. **Monitor Execution and View Results**
+
+   - The workflow execution will begin.
+   - Green indicates the process is successful, Yellow indicates the process is running, and Red indicates the process has failed.
+   - Once the execution is complete, the results will be available immediately.
+
+By following these steps, you will be able to set up and execute the wildfire emission forecasting workflow.
+
+## Workflow Graph
