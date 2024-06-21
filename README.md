@@ -86,4 +86,4 @@ By following these steps, you will be able to set up and execute the wildfire em
 ## Workflow Graph
 
 
-![Workflow Graph]
+![Workflow Graph] (https://github.com/GMU-SESS-AQ/firecasting/blob/readme-changes/image.jpeg)
