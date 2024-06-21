@@ -58,19 +58,22 @@ Finally, we create visual representations of the wildfire emission predictions. 
 
 1. **Download the Source Code**
 
-   - Visit the release page of the `wildfire_emission_forecasting` repository.
+   - Visit the release page of the `GMU-SESS-AQ/firecasting` repository:[GMU-SESS-AQ firecasting Releases](https://github.com/GMU-SESS-AQ/firecasting/releases)
    - Select the latest release available and download the corresponding zip file of the source code.
 
 2. **Import the Workflow into Your Environment**
 
-   - Open your workflow management tool.
-   - Click on "Import" and choose the downloaded zip file. Upload the file to create a new workflow named `wildfire_emission_forecasting`.
+   - Open Geoweaver running on your local machine. [video guidance](https://youtu.be/jUd1dzi18EQ)
+   - Click on "Weaver" in the top navigation bar.
+   - A workspace to add a workflow opens up. Select the "Import" icon in the top navigation bar.
+   - Choose the downloaded zip file. Click on "Start" to upload the file. If the file is valid, a prompt will ask for your permission to upload. Click "OK".
+   - Once the file is uploaded, Geoweaver will create a new workflow named `firecast_main`.
 
 3. **Execute the Workflow**
 
-   - Click on the execute icon to start the workflow execution process.
-   - Select the host and environment, then click "Execute" to initiate the workflow.
-   - Enter the required password when prompted and confirm to start executing the workflow.
+   - Click on the execute icon in the top navigation bar to start the workflow execution process. [video guidance](https://youtu.be/PJcMNR00QoE)
+   - A wizard will open where you need to select the host [video guidance](https://youtu.be/KYiEHI0rn_o) and environment [video guidance](https://www.youtube.com/watch?v=H66AVoBBaHs).
+   - Click on "Execute" icon to initiate the workflow. Enter the required password when prompted and click "Confirm" to start executing the workflow.
 
 4. **Monitor Execution and View Results**
 
@@ -81,3 +84,6 @@ Finally, we create visual representations of the wildfire emission predictions. 
 By following these steps, you will be able to set up and execute the wildfire emission forecasting workflow.
 
 ## Workflow Graph
+
+
+![Workflow Graph]
