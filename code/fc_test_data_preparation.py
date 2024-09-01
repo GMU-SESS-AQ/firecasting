@@ -13,7 +13,7 @@ from fc_train_data_preprocess import columns_to_be_time_series
 
 
 # Folder path containing the text files
-folder_path = '/groups/ESS3/yli74/data/AI_Emis/firedata_VHI'  # The folder yunyao provided with two years of txt files
+folder_path = "/groups/ESS3/yli74/data/AI_Emis/firedata_VHI"
 my_file_path = "/groups/ESS3/zsun/firecasting/data/others/"
 grid_to_window_mapper_csv = f"{my_file_path}/grid_cell_nearest_neight_mapper.csv"
 training_data_folder = "/groups/ESS3/zsun/firecasting/data/train/"
@@ -181,8 +181,8 @@ def prepare_testing_data_for_2_weeks_forecasting(target_date, current_start_day,
   num_previous_days = 7  # Adjust the number of previous days to consider
 
   # Drop rows with NaN values from the shifted columns
-  df_filled = df.fillna(-9999)
-  print("Original df filled the na with -9999 ")
+  df_filled = df.fillna(-999)
+  print("Original df filled the na with -999 ")
 
   # Define features and target
   #X = df.drop([target_col, 'LAT', ' LON'], axis=1)

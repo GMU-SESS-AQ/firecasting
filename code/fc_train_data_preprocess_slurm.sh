@@ -40,15 +40,15 @@ if __name__ == "__main__":
   
 
   # Start date
-  start_date = datetime(2020, 7, 15)
+  start_date = datetime(2020, 9, 1)
 
   # End date
-  end_date = datetime(2020, 7, 18)
+  end_date = datetime(2020, 9, 7)
 
   # Define the step size for traversal
   step = timedelta(days=1)
   
-  training_data_folder = "/groups/ESS3/zsun/firecasting/data/train/all_cells_new_2/"
+  training_data_folder = "/groups/ESS3/zsun/firecasting/data/train/all_cells_new_5yrs/"
 
   # Traverse the dates
   current_date = start_date
@@ -60,7 +60,7 @@ if __name__ == "__main__":
       prepare_training_data(training_end_date, training_data_folder)
       current_date += step
       
-      file_path = "/groups/ESS3/zsun/firecasting/data/train/all_cells_new_2/20200715_time_series_with_window.csv"
+      file_path = "/groups/ESS3/zsun/firecasting/data/train/all_cells_new_5yrs/20200715_time_series_with_window.csv"
 
       #file_path = "/groups/ESS3/yli74/data/AI_Emis/firedata/firedata_20200715.txt"
 
@@ -69,7 +69,7 @@ if __name__ == "__main__":
       print(df.head())
 
       # Assuming you want to calculate statistics of a column named 'column_name'
-      column_name = ' FRP'
+      column_name = 'FRP'
 
       # Basic statistics
       stats = df[column_name].describe()

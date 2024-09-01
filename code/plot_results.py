@@ -7,13 +7,20 @@ import matplotlib.pyplot as plt
 from matplotlib.colors import Normalize
 from matplotlib.cm import ScalarMappable
 import numpy as np
-from fc_model_predict_2weeks import output_folder_name
+from fc_model_predict_2weeks import WildfireEmissionPredictor
 import rasterio
 from rasterio.transform import from_origin
 from rasterio.enums import Resampling
 from scipy.interpolate import griddata
+from fc_model_creation import get_model_paths, chosen_input_columns, model_type, TabNetHandler, LightGBMHandler
 
-output_folder = f"/groups/ESS3/zsun/firecasting/data/output/{output_folder_name}/"
+model_type = "lightgbm"
+model_paths = get_model_paths(model_type)
+predictor = WildfireEmissionPredictor(
+    "/groups/ESS3/zsun/firecasting/model/fc_lightgbm_single_giant.pkl_20160110_20191231_20243108220215.pkl",
+    chosen_input_columns, 
+    model_type)
+output_folder = f"/groups/ESS3/zsun/firecasting/data/output/{predictor.output_folder_name}/"
 sample_lat_lon_csv = "/groups/ESS3/zsun/firecasting/data/others/sample_lat_lon.csv"
 
 

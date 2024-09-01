@@ -7,15 +7,16 @@ from data_preparation_utils import create_grid_to_window_mapper
 
 # Folder path containing the text files
 #folder_path = '/groups/ESS3/yli74/data/AI_Emis/firedata'  # The folder yunyao provided with two years of txt files
-folder_path = '/groups/ESS3/yli74/data/AI_Emis/firedata_VHI'
+# folder_path = '/groups/ESS3/yli74/data/AI_Emis/firedata_VHI'
+folder_path = "/groups/ESS3/yli74/data/AI_Emis/GLOB/"
 my_file_path = "/groups/ESS3/zsun/firecasting/data/others/"
 grid_to_window_mapper_csv = f"{my_file_path}/grid_cell_nearest_neight_mapper.csv"
 training_data_folder = "/groups/ESS3/zsun/firecasting/data/train/"
 
-start_date = "20200107"
-end_date = "20211231"
+start_date = "20200901"
+end_date = "20200907"
 
-columns_to_be_time_series = ['FWI', 'VPD', 'P', 'FRP']
+columns_to_be_time_series = ['FRP']
 
 # Define the columns to check for zero values
 columns_to_check = ['FRP_1_days_ago', 

@@ -13,14 +13,15 @@ echo "write the slurm script into ${SCRIPT_NAME}"
 cat > ${SCRIPT_NAME} << EOF
 #!/bin/bash
 #SBATCH -J fc_model_predict_2weeks       # Job name
+#SBATCH --account=qtong
 #SBATCH --qos=qtong             #
 #SBATCH --partition=contrib     # partition (queue): debug, interactive, contrib, normal, orc-test
-#SBATCH --time=24:00:00         # walltime
+#SBATCH --time=22:00:00         # walltime
 #SBATCH --nodes=1               # Number of nodes I want to use, max is 15 for lin-group, each node has 48 cores
 #SBATCH --ntasks-per-node=4    # Number of MPI tasks, multiply number of nodes with cores per node. 2*48=96
 #SBATCH --mail-user=zsun@gmu.edu    #Email account
 #SBATCH --mail-type=FAIL           #When to email
-#SBATCH --mem=10G
+#SBATCH --mem=20G
 #SBATCH --cores-per-socket=4
 #SBATCH --output=/scratch/%u/%x-%N-%j.out  # Output file`
 #SBATCH --error=/scratch/%u/%x-%N-%j.err   # Error file`
@@ -32,13 +33,19 @@ source /home/zsun/anaconda3/bin/activate
 # Call the Python script using process substitution
 python -u << INNER_EOF
 
-from fc_model_predict_2weeks import predict_2weeks
+from fc_model_predict_2weeks import  WildfireEmissionPredictor
+from fc_model_creation import get_model_paths, chosen_input_columns, model_type, TabNetHandler, LightGBMHandler
 
 start_date = "20210701"
 end_date = "20210831"
 
-predict_2weeks(start_date, end_date)
-
+model_type = "lightgbm"
+model_paths = get_model_paths(model_type)
+predictor = WildfireEmissionPredictor(
+    "/groups/ESS3/zsun/firecasting/model/fc_lightgbm_single_giant.pkl_20160110_20191231_20243108220215.pkl",
+    chosen_input_columns, 
+    model_type)
+predictor.predict_2weeks(start_date, end_date)
 
 INNER_EOF
 

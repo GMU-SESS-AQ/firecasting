@@ -32,8 +32,9 @@ import pickle
 from fc_test_data_preparation import prepare_testing_data_for_2_weeks_forecasting
 from fc_train_data_preprocess import columns_to_check
 import sys
-from fc_model_creation import model_path, chosen_input_columns, model_type, TabNetHandler, LightGBMHandler
+from fc_model_creation import get_model_paths, chosen_input_columns, model_type, TabNetHandler, LightGBMHandler
 from pytorch_tabnet.tab_model import TabNetRegressor
+from sklearn.impute import SimpleImputer
 
 forecasting_days = 7
 
@@ -47,10 +48,7 @@ class WildfireEmissionPredictor:
         self.model_type = model_type
         self.forecasting_days = forecasting_days
 
-        if "tabnet" in self.model_path:
-            self.model_path = f"{self.model_path}.zip"
-
-        self.output_folder_name = f"output_{self.model_type}_window_{self.forecasting_days}_days_forecasting_with_new_yunyao_window_time_series_landuse_vhi_latlon_10_vars"
+        self.output_folder_name = f"output_{self.model_type}_window_{self.forecasting_days}_days_4yrs"
 
         self.model_handler = self.get_model_handler()
         self.model_handler.load_model(self.model_path)
@@ -74,6 +72,15 @@ class WildfireEmissionPredictor:
             input_list.remove(value_to_remove)
         return input_list
 
+    def filling_missing_value(self, df):
+        num_imputer = SimpleImputer(strategy='mean')
+        print("missing value filled with mean values")
+        # Apply the imputer to fill missing values
+        df_imputed = num_imputer.fit_transform(df)
+        # Convert the result back to a DataFrame
+        df_imputed = pd.DataFrame(df_imputed, columns=df.columns, index=df.index)
+        return df_imputed
+
     def predict_single_day_in_the_2weeks(self, single_day_current_date_str, date_str, specific_date_result_folder):
         print("Predicting: ", single_day_current_date_str)
 
@@ -82,6 +89,8 @@ class WildfireEmissionPredictor:
 
         direct_X = X[self.chosen_input_columns]
 
+        direct_X = self.filling_missing_value(direct_X)
+        print("direct_X = ", direct_X.head())
         y_pred = self.model_handler.predict(direct_X)
         print(f"Prediction for {single_day_current_date_str} of start day {date_str} is finished")
 
@@ -190,9 +199,9 @@ class WildfireEmissionPredictor:
 if __name__ == "__main__":
     start_date = "20210714"
     end_date = "20210715"
-
+    model_paths = get_model_paths(model_type)
     predictor = WildfireEmissionPredictor(
-        model_path, 
+        model_paths["single_giant"], 
         chosen_input_columns, 
         model_type)
     predictor.predict_2weeks(start_date, end_date)

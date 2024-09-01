@@ -9,6 +9,7 @@ echo "write the slurm script into ${SCRIPT_NAME}"
 cat > ${SCRIPT_NAME} << EOF
 #!/bin/bash
 #SBATCH -J plot_results       # Job name
+#SBATCH --account=qtong
 #SBATCH --qos=qtong             #
 #SBATCH --partition=contrib     # partition (queue): debug, interactive, contrib, normal, orc-test
 #SBATCH --time=12:00:00         # walltime

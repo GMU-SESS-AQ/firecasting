@@ -6,7 +6,7 @@
 this workflow contains the full stack steps for training, testing, and use the Ml-based fire forecasting model.
 
 ## Processes
-fc_train_data_preprocess, fc_model_creation, fc_test_data_preparation, fc_install_dependencies, fc_model_predict, fc_model_predict_2weeks, fc_model_creation_train_slurm, plot_results, explain_model_results, upload_prediction_to_website, fc_train_data_preprocess_slurm, fc_model_predict_2weeks_slurm, fc_test_data_preprocess_slurm, data_preparation_utils, plot_results_slurm, generate_mapfiles, check_on_results
+fc_train_data_preprocess, fc_model_creation, fc_test_data_preparation, fc_install_dependencies, fc_model_predict, fc_model_predict_2weeks, fc_model_creation_train_slurm, plot_results, explain_model_results, upload_prediction_to_website, fc_train_data_preprocess_slurm, fc_model_predict_2weeks_slurm, fc_test_data_preprocess_slurm, data_preparation_utils, plot_results_slurm, generate_mapfiles, check_on_results, download_prepare_5yrs_ncl
 
 ### Process Descriptions
 fc_train_data_preprocess: null
@@ -26,6 +26,7 @@ data_preparation_utils: null
 plot_results_slurm: null
 generate_mapfiles: null
 check_on_results: null
+download_prepare_5yrs_ncl: null
 
 
 ## Steps to use the workflow
